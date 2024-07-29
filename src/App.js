@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import NCDataViewer from './components/NCDataViewer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <h1>NetCDF Data Viewer</h1>
+            {/* Example file path, adjust as needed */}
+            <NCDataViewer filePath="/home/oem/result/ppi03_dbzh/20240728042128.nc" />
+        </div>
+    );
 }
 
 export default App;
