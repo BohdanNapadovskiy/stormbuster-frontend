@@ -9,9 +9,10 @@ const apiClient = axios.create({
 });
 
 // Function to fetch data from the server
-export const fetchNCData = async (filePath) => {
+export const fetchNCData = async (filePath, zoom, x, y) => {
     try {
-        const response = await apiClient.get(`/api/data`, { params: { filePath } });
+        const endpoint = `api/tiles/${filePath}/${zoom}/${x}/${y}.png`;
+        const response = await apiClient.get(endpoint);
         return response.data;
     } catch (error) {
         console.error("Error fetching data: ", error);
